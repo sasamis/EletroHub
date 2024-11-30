@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletroHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ELetroHub</div>
+            <ul>
+                <li><a href="#" class="active" data-page="products">Produtos</a></li>
+                <li><a href="#" data-page="register">Cadastro</a></li>
+                <li>
+                    <a href="#" data-page="cart" class="cart-icon">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Products Page -->
+        <section id="products" class="page active">
+            <h2>Nossos Produtos</h2>
+            <div class="products-grid" id="products-container"></div>
+        </section>
+
+        <!-- Registration Page -->
+        <section id="register" class="page">
+            <h2>Cadastro de Cliente</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" maxlength="8" required>
+                    <button type="button" id="search-cep">Buscar CEP</button>
+                </div>
+                <div class="form-group">
+                    <label for="address">Endereço:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">Estado:</label>
+                    <input type="text" id="state" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Shopping Cart Page -->
+        <section id="cart" class="page">
+            <h2>Carrinho de Compras</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <div class="shipping-calc">
+                    <input type="text" id="shipping-cep" placeholder="CEP para entrega" maxlength="8">
+                    <button id="calc-shipping">Calcular Frete</button>
+                    <div id="shipping-result"></div>
+                </div>
+                <div class="total">
+                    <span>Total: R$ </span>
+                    <span id="cart-total">0,00</span>
+                </div>
+                <button id="checkout">Finalizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="products.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
